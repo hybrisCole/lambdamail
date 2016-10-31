@@ -1,11 +1,24 @@
 /* eslint-disable no-console */
-const aws = require('aws-sdk');
+var aws = require('aws-sdk');
+
 aws.config.update({
   region          : 'us-east-1',
   accessKeyId     : 'AKIAJMGM4SRPFNPVYT4Q',
   secretAccessKey : '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',
 });
-const ses = new aws.SES({apiVersion : '2012-10-17'});
+var ses = new aws.SES({apiVersion : '2012-10-17'});
+
+/*
+const lambda = new aws.Lambda({apiVersion: '2015-03-31'});
+const params = {
+  FunctionName: 'sendMail',
+};
+console.log('inkoking lambda');
+lambda.invoke(params, function(err, data) {
+  if (err) console.log(err, err.stack);
+  else     console.log(data);
+});
+*/
 
 exports.handler = function handler (event, context) {
   ses.sendEmail({
@@ -17,11 +30,7 @@ exports.handler = function handler (event, context) {
       },
       Body : {
         Html : {
-          Data : `
-            <p>
-              HOLA
-            </p>
-          `,
+          Data : '<p>HOLA</p>',
         },
       },
     },
