@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 console.log('loading function');
-exports.handler = (event, context) => {
+exports.handler = function handler (event, context) {
   console.log('hello from semaphore');
   console.log(event.key1);
   console.log(event.key2);
