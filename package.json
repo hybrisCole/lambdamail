@@ -1,0 +1,19 @@
+{
+  "name": "lambdamail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hybrisCole/lambdamail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hybrisCole/lambdamail/issues"
+  },
+  "homepage": "https://github.com/hybrisCole/lambdamail#readme"
+}
