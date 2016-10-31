@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/hybrisCole/lambdamail#readme",
   "dependencies": {
-
+    "aws-sdk": "2.6.12"
   },
   "devDependencies": {
     "eslint": "3.9.1",
