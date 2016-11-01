@@ -8,10 +8,14 @@ aws.config.update({
   secretAccessKey : 'QT6Fr+8csjU1NkfVwtBt/MugxzSj0+N2Ok1RXkpZ',
 });
 
-/*
-const lambda = new aws.Lambda({apiVersion: '2015-03-31'});
+/* const lambda = new aws.Lambda({apiVersion: '2015-03-31'});
 const params = {
-  FunctionName: 'sendMail',
+  FunctionName   : 'sendMail',
+  InvocationType : 'Event',
+  Payload        : JSON.stringify({
+    from      : 'acpii2005@gmail.com',
+    addresses : ['acole@18techs.com', 'acpii2005@gmail.com'],
+  }),
 };
 console.log('inkoking lambda');
 lambda.invoke(params, function(err, data) {
@@ -34,5 +38,11 @@ exports.handler = function handler (event, context, callback) {
         },
       },
     },
-  }, callback);
+  }, function resolve (err, data) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(null, data);
+    }
+  });
 };
