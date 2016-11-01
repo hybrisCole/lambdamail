@@ -20,10 +20,10 @@ lambda.invoke(params, function(err, data) {
 });
 */
 
-exports.handler = function handler (event, context) {
+exports.handler = function handler (event, context, callback) {
   ses.sendEmail({
-    Source      : 'acpii2005@gmail.com',
-    Destination : { ToAddresses : ['acpii2005@gmail.com', 'acole@18techs.com'] },
+    Source      : event.from,
+    Destination : { ToAddresses : event.addresses },
     Message     : {
       Subject : {
         Data : '4Tius App',
@@ -34,10 +34,5 @@ exports.handler = function handler (event, context) {
         },
       },
     },
-  }, function resolve (err, data) {
-    if (err) {
-      context.succeed(err);
-    }
-    context.succeed(null, data);
-  });
+  }, callback);
 };
