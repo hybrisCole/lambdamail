@@ -34,7 +34,7 @@ exports.handler = function handler (event, context) {
         },
       },
     },
-  }, (err, data) => {
+  }, function resolve (err, data) {
     if (err) {
       context.succeed(err);
     }
