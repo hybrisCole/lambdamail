@@ -23,7 +23,7 @@ lambda.invoke(params, function(err, data) {
 exports.handler = function handler (event, context) {
   ses.sendEmail({
     Source      : 'acpii2005@gmail.com',
-    Destination : { ToAddresses : 'acpii2005@gmail.com' },
+    Destination : { ToAddresses : ['acpii2005@gmail.com', 'acole@18techs.com'] },
     Message     : {
       Subject : {
         Data : '4Tius App',
